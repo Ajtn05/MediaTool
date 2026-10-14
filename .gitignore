@@ -1,0 +1,41 @@
+# Swift Package Manager and Xcode output
+.build/
+.swiftpm/
+DerivedData/
+*.dSYM/
+*.xcuserstate
+xcuserdata/
+
+# Generated app bundles, icons, and distribution archives
+/dist/
+*.app/
+*.dmg
+*.pkg
+*.icns
+*.iconset/
+
+# Local files and credentials
+/.local/
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.key
+*.mobileprovision
+
+# macOS and editor metadata
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python cache from build helpers
+__pycache__/
+*.py[cod]
+.venv/

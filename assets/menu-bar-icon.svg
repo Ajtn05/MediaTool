@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Compact, single-color variation of icon.svg for the macOS menu bar.
+     Geometry matches MenuBarLogoMark in Sources/MediaTool/Views/Components/Logo.swift. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 100 100">
+  <g transform="translate(-2.8,-3.625) scale(1.1)" fill="#000000">
+    <polygon points="11,34 16,29 20,33 34,19 38,17 42,19 44,16 47,16 45,20 42,23 48,22 49,25 42,27 38,26 20,44 16,40 11,39"/>
+    <polygon points="27.5,32.5 32.5,27.5 47.5,42.5 42.5,47.5"/>
+    <polygon points="58,53 82.5,77.5 77.5,82.5 53,58"/>
+    <polygon points="17.5,77.5 22.5,82.5 60.5,44.5 55.5,39.5"/>
+    <polygon points="55.5,39 63,46.5 70.5,39 63,31.5"/>
+    <polygon points="63,31 71,23 77,19 85,15 83,23 78,30 70,38"/>
+  </g>
+</svg>
