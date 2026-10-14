@@ -5,10 +5,15 @@ set -euo pipefail
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_NAME="MediaTool"
 BUNDLE_ID="com.local.mediatool"
-APP_VERSION="1.0.0"
+APP_VERSION="${APP_VERSION:-1.0.0}"
 APP_DIR="${PROJECT_ROOT}/dist/${APP_NAME}.app"
 
 cd "$PROJECT_ROOT"
+
+if [[ ! "$APP_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "APP_VERSION must have the form major.minor.patch, e.g. 1.0.0." >&2
+  exit 1
+fi
 
 for tool in swift magick codesign; do
   if ! command -v "$tool" >/dev/null 2>&1; then

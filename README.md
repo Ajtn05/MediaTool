@@ -34,6 +34,16 @@ runs locally using tools installed on your Mac.
 - **Appearance:** Modern and Classic interfaces, independent accents, and System, Light, or Dark
   appearance in Modern.
 
+## Install the release
+
+Download the universal DMG from [GitHub Releases](https://github.com/Ajtn05/MediaTool/releases/latest),
+open it, and drag **MediaTool.app** to **Applications**. Eject the DMG, then open the app from
+Applications. The download supports Apple silicon and Intel Macs running macOS 13 or later.
+Install the processing tools listed below; they are not included in the DMG.
+
+Release builds are ad-hoc signed and are not notarized. If macOS blocks the first launch, see
+[Apple's instructions for opening an app you trust](https://support.apple.com/en-us/102445).
+
 ## Requirements
 
 - macOS 13 Ventura or later.
@@ -82,8 +92,23 @@ open dist/MediaTool.app
 
 The script builds a release executable, generates the app icon from `assets/icon.svg`, assembles
 `dist/MediaTool.app`, and applies an ad-hoc signature for local use. If `iconutil` cannot pack the
-iconset, it uses the Python 3 helper in `scripts/`. The resulting app is not notarized for
-public distribution.
+iconset, it uses the Python 3 helper in `scripts/`. The resulting app is ad-hoc signed and is not
+notarized.
+
+To build the universal DMG and its SHA-256 checksum:
+
+```sh
+./scripts/build-dmg.sh
+```
+
+This compiles both `arm64` and `x86_64`, verifies the app signature, and creates
+`dist/MediaTool-1.0.0-universal.dmg` with an Applications shortcut and installation instructions.
+The image is checked with `hdiutil verify` before it replaces the previous DMG.
+Use `APP_VERSION=1.0.1 ./scripts/build-dmg.sh` to build another version.
+
+Pushing a tag such as `v1.0.0` runs the release workflow: it builds the universal DMG, sets the app
+version from the tag, and publishes the DMG and checksum to GitHub Releases. Add release notes in
+`docs/releases/<tag>.md`; otherwise GitHub generates the notes from the repository history.
 
 To compile the release executable without assembling an app bundle:
 
@@ -156,7 +181,7 @@ xcrun swift-format lint --strict --recursive Package.swift Sources
 Before submitting changes, run the relevant checks:
 
 ```sh
-bash -n scripts/build-app.sh
+bash -n scripts/build-app.sh scripts/build-dmg.sh
 swift build --configuration release
 ```
 
