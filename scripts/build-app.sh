@@ -32,6 +32,7 @@ trap 'rm -rf "$SCRATCH_DIR"' EXIT
 CONTENTS="${SCRATCH_DIR}/${APP_NAME}.app/Contents"
 mkdir -p "${CONTENTS}/MacOS" "${CONTENTS}/Resources"
 cp "$BIN_PATH" "${CONTENTS}/MacOS/${APP_NAME}"
+cp "${PROJECT_ROOT}/assets/LICENSE.bootstrap-icons" "${CONTENTS}/Resources/Bootstrap Icons License.txt"
 
 cat > "${CONTENTS}/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -58,11 +59,14 @@ ICONSET="${SCRATCH_DIR}/AppIcon.iconset"
 MASTER="${SCRATCH_DIR}/app-icon.png"
 mkdir -p "$ICONSET"
 
-# Render the white vector artwork over a dark gradient once, then downscale it.
+# Render the artwork over an inset, rounded dark tile once, then downscale it.
 # Drawing the gradient here also works with ImageMagick's built-in SVG renderer.
 magick -size 1024x1024 gradient:'#2C2C36-#08080A' \
+  \( -size 1024x1024 canvas:none -fill white \
+    -draw 'roundrectangle 100,100 924,924 184,184' \) \
+  -alpha off -compose CopyOpacity -composite \
   \( -background none "${PROJECT_ROOT}/assets/icon.svg" -resize 1024x1024 \) \
-  -composite "$MASTER"
+  -compose Over -composite "$MASTER"
 
 for size in 16 32 128 256 512; do
   magick "$MASTER" -resize "${size}x${size}" -depth 8 \

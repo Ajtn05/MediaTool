@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Compact, single-color variation of icon.svg for the macOS menu bar.
-     Geometry matches MenuBarLogoMark in Sources/MediaTool/Views/Components/Logo.swift. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 100 100">
-  <g transform="translate(-2.8,-3.625) scale(1.1)" fill="#000000">
-    <polygon points="11,34 16,29 20,33 34,19 38,17 42,19 44,16 47,16 45,20 42,23 48,22 49,25 42,27 38,26 20,44 16,40 11,39"/>
-    <polygon points="27.5,32.5 32.5,27.5 47.5,42.5 42.5,47.5"/>
-    <polygon points="58,53 82.5,77.5 77.5,82.5 53,58"/>
-    <polygon points="17.5,77.5 22.5,82.5 60.5,44.5 55.5,39.5"/>
-    <polygon points="55.5,39 63,46.5 70.5,39 63,31.5"/>
-    <polygon points="63,31 71,23 77,19 85,15 83,23 78,30 70,38"/>
+<!-- Bootstrap Icons v1.13.1, tools (MIT): https://icons.getbootstrap.com/icons/tools/
+     See LICENSE.bootstrap-icons. Geometry matches LogoArtwork in Logo.swift. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 16 16">
+  <g transform="translate(0.8,0.8) scale(0.9)" fill="#000000">
+    <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
   </g>
 </svg>

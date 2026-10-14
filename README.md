@@ -124,6 +124,9 @@ docs/                    UI style guide and README images
 .github/workflows/       macOS release-build checks
 ```
 
+The app and menu bar artwork use Bootstrap Icons' [Tools](https://icons.getbootstrap.com/icons/tools/)
+icon under the [MIT license](assets/LICENSE.bootstrap-icons), included in the app bundle.
+
 `AppState` turns staged files and settings into jobs. `CommandBuilder` creates argument arrays
 shared by execution and command previews; media commands run directly through `Process`, without
 a shell. `JobQueue` runs one job at a time, and `ProgressParser` interprets FFmpeg's progress
